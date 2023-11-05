@@ -30,7 +30,7 @@ image.heightAnchor.constraint(equalTo: image.widthAnchor, multiplier: 1/1)
 ```
 Constraints using **SimpleConstraints**
 ```swift
-view.edgesAndRatio(premiumImage, top: nil, left: nil, right: nil, aspectRatio: 1)
+view.edgesAndRatio(image, top: nil, left: nil, right: nil, aspectRatio: 1)
 ```
 
 ## Installation
