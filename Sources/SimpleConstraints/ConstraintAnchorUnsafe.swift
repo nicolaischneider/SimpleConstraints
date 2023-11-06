@@ -1,5 +1,15 @@
 import UIKit
 
+public struct Straint {
+    let type: SimpleConstraints.ConsraintTypeUnsafe
+    let constraint: SimpleConstraints.ConsraintAnchorUnsafe
+    
+    init(t: SimpleConstraints.ConsraintTypeUnsafe, c: SimpleConstraints.ConsraintAnchorUnsafe) {
+        self.type = t
+        self.constraint = c
+    }
+}
+
 extension SimpleConstraints {
     
     public enum ConsraintTypeUnsafe {

@@ -5,13 +5,13 @@ public extension UIView {
     // TODO: add function for unsafe constraints (parameter becomes array of contraints)
     func unsafeConstraints(
         _ subView: UIView,
-        constraints: [(SimpleConstraints.ConsraintTypeUnsafe, SimpleConstraints.ConsraintAnchorUnsafe)],
+        constraints: [Straint],
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
         commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
         for constraint in constraints {
-            classifyAndSetConstraint(subView: subView, constraint: constraint)
+            classifyAndSetConstraint(subView: subView, constraint: (constraint.type, constraint.constraint))
         }
     }
 }
