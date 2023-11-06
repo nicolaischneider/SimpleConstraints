@@ -21,10 +21,14 @@ extension SimpleConstraints {
     
     public enum ConsraintAnchorUnsafe {
         
-        case top(UIView, CGFloat, safe: Bool = false)
-        case bottom(UIView, CGFloat, safe: Bool = false)
-        case left(UIView, CGFloat, safe: Bool = false)
-        case right(UIView, CGFloat, safe: Bool = false)
+        case top(UIView, CGFloat)
+        case topSafe(UIView, CGFloat)
+        case bottom(UIView, CGFloat)
+        case bottomSafe(UIView, CGFloat)
+        case left(UIView, CGFloat)
+        case leftSafe(UIView, CGFloat)
+        case right(UIView, CGFloat)
+        case rightSafe(UIView, CGFloat)
         case centerX(UIView, CGFloat)
         case centerY(UIView, CGFloat)
         case length(CGFloat)
@@ -32,13 +36,21 @@ extension SimpleConstraints {
                 
         var constant: CGFloat {
             switch self {
-            case .top(_, let constant, _):
+            case .top(_, let constant):
                 return constant
-            case .bottom(_, let constant, _):
+            case .bottom(_, let constant):
                 return constant
-            case .left(_, let constant, _):
+            case .left(_, let constant):
                 return constant
-            case .right(_, let constant, _):
+            case .right(_, let constant):
+                return constant
+            case .topSafe(_, let constant):
+                return constant
+            case .bottomSafe(_, let constant):
+                return constant
+            case .leftSafe(_, let constant):
+                return constant
+            case .rightSafe(_, let constant):
                 return constant
             case .centerX(_, let constant):
                 return constant
@@ -53,7 +65,7 @@ extension SimpleConstraints {
             switch self {
             case .length(let length):
                 return length
-            case .left, .right, .centerX, .centerY, .top, .bottom, .ratio:
+            case .left, .leftSafe, .right, .rightSafe, .centerX, .centerY, .top, .topSafe, .bottom, .bottomSafe, .ratio:
                 return nil
             }
         }
@@ -62,37 +74,37 @@ extension SimpleConstraints {
             switch self {
             case .ratio(let ratio):
                 return ratio
-            case .left, .right, .centerX, .centerY, .top, .bottom, .length:
+            case .left, .leftSafe, .right, .rightSafe, .centerX, .centerY, .top, .topSafe, .bottom, .bottomSafe, .length:
                 return nil
             }
         }
         
         var anchorY: NSLayoutYAxisAnchor? {
             switch self {
-            case .top(let view, _, safe: let safe):
-                return safe ?
-                view.safeAreaLayoutGuide.topAnchor :
-                view.topAnchor
-            case .bottom(let view, _, safe: let safe):
-                return safe ?
-                view.safeAreaLayoutGuide.bottomAnchor :
-                view.bottomAnchor
-            case .left, .right, .centerX, .centerY, .length, .ratio:
+            case .top(let view, _):
+                return view.topAnchor
+            case .bottom(let view, _):
+                return view.bottomAnchor
+            case .topSafe(let view, _):
+                return view.safeAreaLayoutGuide.topAnchor
+            case .bottomSafe(let view, _):
+                return view.safeAreaLayoutGuide.bottomAnchor
+            case .left, .leftSafe, .right, .rightSafe, .centerX, .centerY, .length, .ratio:
                 return nil
             }
         }
         
         var anchorX: NSLayoutXAxisAnchor? {
             switch self {
-            case .left(let view, _, safe: let safe):
-                return safe ?
-                view.safeAreaLayoutGuide.leftAnchor :
-                view.leftAnchor
-            case .right(let view, _, safe: let safe):
-                return safe ?
-                view.safeAreaLayoutGuide.rightAnchor :
-                view.rightAnchor
-            case .top, .bottom, .centerX, .centerY, .length, .ratio:
+            case .left(let view, _):
+                return view.leftAnchor
+            case .right(let view, _):
+                return view.rightAnchor
+            case .leftSafe(let view, _):
+                return view.safeAreaLayoutGuide.leftAnchor
+            case .rightSafe(let view, _):
+                return view.safeAreaLayoutGuide.rightAnchor
+            case .centerX, .centerY, .top, .topSafe, .bottom, .bottomSafe, .length, .ratio:
                 return nil
             }
         }
@@ -101,7 +113,7 @@ extension SimpleConstraints {
             switch self {
             case .centerX(let view, _):
                 return view.centerXAnchor
-            case .top, .bottom, .left, .right, .centerY, .length, .ratio:
+            case .left, .leftSafe, .right, .rightSafe, .centerY, .ratio, .top, .topSafe, .bottom, .bottomSafe, .length:
                 return nil
             }
         }
@@ -110,20 +122,20 @@ extension SimpleConstraints {
             switch self {
             case .centerY(let view, _):
                 return view.centerYAnchor
-            case .top, .bottom, .left, .right, .centerX, .length, .ratio:
+            case .left, .leftSafe, .right, .rightSafe, .centerX, .ratio, .top, .topSafe, .bottom, .bottomSafe, .length:
                 return nil
             }
         }
         
         var description: String {
             switch self {
-            case .top:
+            case .top, .topSafe:
                 return "Top Anchor"
-            case .bottom:
+            case .bottom, .bottomSafe:
                 return "Bottom Anchor"
-            case .left:
+            case .left, .leftSafe:
                 return "Left Anchor"
-            case .right:
+            case .right, .rightSafe:
                 return "Right Anchor"
             case .centerX:
                 return "CenterX Anchor"
