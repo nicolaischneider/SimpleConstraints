@@ -1,8 +1,8 @@
 import UIKit
 
 public struct Straint {
-    let type: SimpleConstraints.ConsraintTypeUnsafe
-    let constraint: SimpleConstraints.ConsraintAnchorUnsafe
+    public let type: SimpleConstraints.ConsraintTypeUnsafe
+    public let constraint: SimpleConstraints.ConsraintAnchorUnsafe
     
     init(t: SimpleConstraints.ConsraintTypeUnsafe, c: SimpleConstraints.ConsraintAnchorUnsafe) {
         self.type = t
