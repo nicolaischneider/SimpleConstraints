@@ -37,9 +37,9 @@ view.edgesAndRatio(image, top: nil, left: nil, right: nil, aspectRatio: 1)
 
 SimpleConstraints can currently only be added as a Swift Package.
 
-## Usage
+## Usage: Safe Constraints
 
-The SDK covers 6 different cases of constraints:
+The SDK covers 6 different cases of constraints to set guaranteed all constraints in one function:
 1. 4 edges (top, left, right, bottom)
 2. 3 edges, one length (height or width)
 3. 2 edges, 2 lengths (height and width)
@@ -49,11 +49,11 @@ The SDK covers 6 different cases of constraints:
 
 ### Constraint Parameters
 
-The `ConstraintYAnchor`/`ConstraintXAnchor` enums allow you to specify top, bottom, left and right constraints with an optional constant for spacing and a flag to determine if the safe area should be considered (The `safe` flag is set to `false` by default). The case describes the anchor of the given view in the first parameter. The second parameter sets the padding.
+The `ConstraintYAnchor`/`ConstraintXAnchor` enums allow you to specify top, bottom, left and right constraints with an optional constant for spacing and extra cases (eg `.topSafe`, `.rightSafe`, ...) to determine if the safe area should be considered. The case describes the anchor of the given view in the first parameter. The second parameter sets the padding.
 ```swift
-.top(view, 10, safe: true)
+.top(view, 10)
 ```
-In  the following example the top anchor of our subview is pinned to the bottom anchor of `otherView` with a padding of 20. When `ConstraintYAnchor` or `ConstraintXAnchor` are set to nil **SimpleConstraints** will automatically use the respective parent view constraint - the equivalence of `left: nil` is `left: .left(view, 0, safe: false)`.
+In  the following example the top anchor of our subview is pinned to the bottom anchor of `otherView` with a padding of 20. When `ConstraintYAnchor` or `ConstraintXAnchor` are set to nil **SimpleConstraints** will automatically use the respective parent view constraint - the equivalence of `left: nil` is `left: .left(view, 0)`.
 ```swift
 view.edges(subView, top: .bottom(otherView, 20), bottom: nil, left: nil, right: nil)
 ```
@@ -64,7 +64,7 @@ The `ConstraintXCenter` and `ConstraintYCenter` work similar and describe the `c
 
 Given the four edges (top, left, right, bottom) the `edges()` function can easily set all needed onstraints. The following view has a padding of 20 to the top safe area from the parent view and a padding of 10 to the bottom. The left and right anchor are the same.
 ```swift
-view.edges(subView, top: .top(view, 20, safe: true), bottom: .bottom(view, 10), left: nil, right: nil)
+view.edges(subView, top: .topSafe(view, 20), bottom: .bottom(view, 10), left: nil, right: nil)
 ```
 
 ### Case 2: 3 Edges and 1 Length (height/width)
@@ -106,9 +106,26 @@ view.centerWithSize(subView,
 view.topCenterWithSize(subView, top: nil, centerX: .centerX(view, 0), height: 30, width: 30)
 ```
 
-## TBD
-- Unit Tests
-- Added functionality for unsafe constraints
+## Usage: Unsafe Constraints
+
+Alternatively, **SimpleConstraints** also supports the usage of unsafe setting of constraints. This can be done by passing an array of `Straint`s using `unsafeConstraints()`. All constraints will be processed in the exact given order. This function will **NOT** guarantee the display of an object since no restrictions are set.
+
+### `Straint`
+
+A `Straint` consists of 
+- a **type** meant for the constraint of the subview that should be set and
+- a **constraint**, which describes the exact constraint we want to set to
+
+### Example for Unsafe Constraints
+
+```swift
+view.unsafeConstraints(subview, constraints: [
+    Straint(t: .top, c: .bottom(otherView, 40)),
+    Straint(t: .left, c: .left(view, 20)),
+    Straint(t: .right, c: .right(view, -20)),
+    Straint(t: .height, c: .length(30))
+])
+```
 
 ## Comtributing
 
