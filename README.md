@@ -49,7 +49,7 @@ The SDK covers 6 different cases of constraints:
 
 ### Constraint Parameters
 
-The `ConstraintYAnchor`/`ConstraintXAnchor` enums allow you to specify top, bottom, left and right constraints with an optional constant for spacing and a flag to determine if the safe area should be considered (The `safe` flag is set to `false by default`). The case describes the anchor of the given view in the first parameter. The second parameter sets the padding.
+The `ConstraintYAnchor`/`ConstraintXAnchor` enums allow you to specify top, bottom, left and right constraints with an optional constant for spacing and a flag to determine if the safe area should be considered (The `safe` flag is set to `false` by default). The case describes the anchor of the given view in the first parameter. The second parameter sets the padding.
 ```swift
 .top(view, 10, safe: true)
 ```
@@ -58,7 +58,7 @@ In  the following example the top anchor of our subview is pinned to the bottom 
 view.edges(subView, top: .bottom(otherView, 20), bottom: nil, left: nil, right: nil)
 ```
 
-The `ConstraintXCenter` and `ConstraintYCenter` work similar and dxescribe the `centerXAnchor` and `centerYAnchor`.
+The `ConstraintXCenter` and `ConstraintYCenter` work similar and describe the `centerXAnchor` and `centerYAnchor`.
 
 ### Case 1: All edges
 
@@ -67,7 +67,7 @@ Given the four edges (top, left, right, bottom) the `edges()` function can easil
 view.edges(subView, top: .top(view, 20, safe: true), bottom: .bottom(view, 10), left: nil, right: nil)
 ```
 
-### Case 2: 3 Edges and 1 length (height/width)
+### Case 2: 3 Edges and 1 Length (height/width)
 
 `edgesAndHeight()` is used when three edges of a view and a length are given. In the following case the height is set to 20, while the top, left and right edge are pinned to the parent view's constraints.
 ```swift
@@ -83,7 +83,7 @@ view.edgesAndSize(subView, top: nil, left: nil, height: 30, width: 30)
 
 ### Case 4: 3 Edges and the Aspect Ratio
 
-`edgesAndRatio()` is used when three edges of a view and the aspect ratio for the missing height/width are given. In the following case the view is pinned to the top, left and right side of the view and has and aspect ratio of 1:1.
+`edgesAndRatio()` is used when three edges of a view and the aspect ratio for the missing height/width are given. In the following case the view is pinned to the top, left and right side of the view and has an aspect ratio of 1:1.
 ```swift
 view.edgesAndRatio(subView, top: nil, left: nil, right: nil, aspectRatio: 1)
 ```
@@ -101,7 +101,7 @@ view.centerWithSize(subView,
 
 ### Case 6: 1 Edge, 1 centered Axis and a given Size
 
-`...CenterWithSize()` is used when one edges of a view, the center axis of x/y and the size are given. In the following case the view is pinned to the top, and centered on the x axis of the parent view with a size of 30x30.
+`...CenterWithSize()` is used when one edge of a view, the center axis of x or y and the size are given. In the following case the view is pinned to the top, and centered on the x axis of the parent view with a size of 30x30.
 ```swift
 view.topCenterWithSize(subView, top: nil, centerX: .centerX(view, 0), height: 30, width: 30)
 ```
