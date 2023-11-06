@@ -12,8 +12,10 @@ extension SimpleConstraints {
     }
     
     public enum ConstraintYAnchor {
-        case top(UIView, CGFloat, safe: Bool = false)
-        case bottom(UIView, CGFloat, safe: Bool = false)
+        case top(UIView, CGFloat)
+        case topSafe(UIView, CGFloat)
+        case bottom(UIView, CGFloat)
+        case bottomSafe(UIView, CGFloat)
         
         init(egde: EdgeY, view: UIView) {
             switch egde {
@@ -26,30 +28,36 @@ extension SimpleConstraints {
         
         var constant: CGFloat {
             switch self {
-            case .top(_, let constant, _):
+            case .top(_, let constant):
                 return constant
-            case .bottom(_, let constant, _):
+            case .bottom(_, let constant):
+                return constant
+            case .topSafe(_, let constant):
+                return constant
+            case .bottomSafe(_, let constant):
                 return constant
             }
         }
         
         var anchor: NSLayoutYAxisAnchor {
             switch self {
-            case .top(let view, _, safe: let safe):
-                return safe ?
-                view.safeAreaLayoutGuide.topAnchor :
-                view.topAnchor
-            case .bottom(let view, _, safe: let safe):
-                return safe ?
-                view.safeAreaLayoutGuide.bottomAnchor :
-                view.bottomAnchor
+            case .top(let view, _):
+                return view.topAnchor
+            case .bottom(let view, _):
+                return view.bottomAnchor
+            case .topSafe(let view, _):
+                return view.safeAreaLayoutGuide.topAnchor
+            case .bottomSafe(let view, _):
+                return view.safeAreaLayoutGuide.bottomAnchor
             }
         }
     }
     
     public enum ConstraintXAnchor {
-        case left(UIView, CGFloat, safe: Bool = false)
-        case right(UIView, CGFloat, safe: Bool = false)
+        case left(UIView, CGFloat)
+        case leftSafe(UIView, CGFloat)
+        case right(UIView, CGFloat)
+        case rightSafe(UIView, CGFloat)
         
         init(egde: EdgeX, view: UIView) {
             switch egde {
@@ -62,23 +70,27 @@ extension SimpleConstraints {
         
         var constant: CGFloat {
             switch self {
-            case .left(_, let constant, _):
+            case .left(_, let constant):
                 return constant
-            case .right(_, let constant, _):
+            case .right(_, let constant):
+                return constant
+            case .leftSafe(_, let constant):
+                return constant
+            case .rightSafe(_, let constant):
                 return constant
             }
         }
         
         var anchor: NSLayoutXAxisAnchor {
             switch self {
-            case .left(let view, _, safe: let safe):
-                return safe ?
-                view.safeAreaLayoutGuide.leftAnchor :
-                view.leftAnchor
-            case .right(let view, _, safe: let safe):
-                return safe ?
-                view.safeAreaLayoutGuide.rightAnchor :
-                view.rightAnchor
+            case .left(let view, _):
+                return view.leftAnchor
+            case .right(let view, _):
+                return view.rightAnchor
+            case .leftSafe(let view, _):
+                return view.safeAreaLayoutGuide.leftAnchor
+            case .rightSafe(let view, _):
+                return view.safeAreaLayoutGuide.rightAnchor
             }
         }
     }
