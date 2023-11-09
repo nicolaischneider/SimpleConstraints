@@ -127,6 +127,6 @@ view.unsafeConstraints(subview, constraints: [
 ])
 ```
 
-## Comtributing
+## Contributing
 
 If you find any issues or have suggestions, please create an issue.
