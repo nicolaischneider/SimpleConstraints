@@ -78,7 +78,7 @@ extension UIView {
                 debugPrint("Height Anchor can't set \(anchorToSet.description) for sub view.")
                 return
             }
-            subView.heightAnchor.constraint(equalToConstant: width).isActive = true
+            subView.widthAnchor.constraint(equalToConstant: width).isActive = true
         
         case .ratioHeight:
             guard let ratio = anchorToSet.ratio else {
