@@ -68,8 +68,8 @@ public extension UIView {
             subView.leftAnchor.constraint(
                 equalTo: left?.anchor ?? self.leftAnchor,
                 constant: left?.constant ?? 0),
-            subView.heightAnchor.constraint(equalToConstant: height),
-            subView.widthAnchor.constraint(equalToConstant: width)
+            subView.widthAnchor.constraint(equalToConstant: width),
+            subView.heightAnchor.constraint(equalToConstant: height)
         ])
     }
     
@@ -89,8 +89,8 @@ public extension UIView {
                 constant: centerY?.constant ?? 0).isActive = true
         subView.rightAnchor.constraint(
                 equalTo: right?.anchor ?? self.rightAnchor,
-                constant: (right?.constant ?? 0)).isActive = true
-        subView.heightAnchor.constraint(equalToConstant: height).isActive = true
+                constant: right?.constant ?? 0).isActive = true
         subView.widthAnchor.constraint(equalToConstant: width).isActive = true
+        subView.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
 }
