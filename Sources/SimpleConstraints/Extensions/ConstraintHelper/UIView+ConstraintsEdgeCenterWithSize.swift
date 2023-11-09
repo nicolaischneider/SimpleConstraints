@@ -62,12 +62,12 @@ public extension UIView {
     ) {
         commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
         NSLayoutConstraint.activate([
-            subView.leftAnchor.constraint(
-                equalTo: left?.anchor ?? self.leftAnchor,
-                constant: left?.constant ?? 0),
             subView.centerYAnchor.constraint(
                 equalTo: centerY?.anchor ?? self.centerYAnchor,
                 constant: centerY?.constant ?? 0),
+            subView.leftAnchor.constraint(
+                equalTo: left?.anchor ?? self.leftAnchor,
+                constant: left?.constant ?? 0),
             subView.heightAnchor.constraint(equalToConstant: height),
             subView.widthAnchor.constraint(equalToConstant: width)
         ])
@@ -84,15 +84,13 @@ public extension UIView {
         translateslatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
         commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
-        NSLayoutConstraint.activate([
-            subView.rightAnchor.constraint(
-                equalTo: right?.anchor ?? self.rightAnchor,
-                constant: (right?.constant ?? 0)),
-            subView.centerYAnchor.constraint(
+        subView.centerYAnchor.constraint(
                 equalTo: centerY?.anchor ?? self.centerYAnchor,
-                constant: centerY?.constant ?? 0),
-            subView.heightAnchor.constraint(equalToConstant: height),
-            subView.widthAnchor.constraint(equalToConstant: width)
-        ])
+                constant: centerY?.constant ?? 0).isActive = true
+        subView.rightAnchor.constraint(
+                equalTo: right?.anchor ?? self.rightAnchor,
+                constant: (right?.constant ?? 0)).isActive = true
+        subView.heightAnchor.constraint(equalToConstant: height).isActive = true
+        subView.widthAnchor.constraint(equalToConstant: width).isActive = true
     }
 }
