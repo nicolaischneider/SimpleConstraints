@@ -7,9 +7,9 @@ public extension UIView {
     /// Case 4: Set the top, left, right edges and aspect ratio based on height.
     func edgesAndRatio(
         _ subView: UIView,
-        top: SimpleConstraints.ConstraintYAnchor?,
-        left: SimpleConstraints.ConstraintXAnchor?,
-        right: SimpleConstraints.ConstraintXAnchor?,
+        top: ConstraintYAnchor?,
+        left: ConstraintXAnchor?,
+        right: ConstraintXAnchor?,
         aspectRatio: CGFloat, // Height to width ratio
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
@@ -34,9 +34,9 @@ public extension UIView {
     /// Case 4: Set the left, bottom, right edges and aspect ratio based on height.
     func edgesAndRatio(
         _ subView: UIView,
-        left: SimpleConstraints.ConstraintXAnchor?,
-        bottom: SimpleConstraints.ConstraintYAnchor?,
-        right: SimpleConstraints.ConstraintXAnchor?,
+        left: ConstraintXAnchor?,
+        bottom: ConstraintYAnchor?,
+        right: ConstraintXAnchor?,
         aspectRatio: CGFloat, // Height to width ratio
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
@@ -61,9 +61,9 @@ public extension UIView {
     /// Case 4: Set the top, left, bottom edges and aspect ratio based on width.
     func edgesAndRatio(
         _ subView: UIView,
-        top: SimpleConstraints.ConstraintYAnchor?,
-        left: SimpleConstraints.ConstraintXAnchor?,
-        bottom: SimpleConstraints.ConstraintYAnchor?,
+        top: ConstraintYAnchor?,
+        left: ConstraintXAnchor?,
+        bottom: ConstraintYAnchor?,
         aspectRatio: CGFloat, // Width to height ratio
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
@@ -88,9 +88,9 @@ public extension UIView {
     /// Case 4: Set the top, right, bottom edges and aspect ratio based on width.
     func edgesAndRatio(
         _ subView: UIView,
-        top: SimpleConstraints.ConstraintYAnchor?,
-        right: SimpleConstraints.ConstraintXAnchor?,
-        bottom: SimpleConstraints.ConstraintYAnchor?,
+        top: ConstraintYAnchor?,
+        right: ConstraintXAnchor?,
+        bottom: ConstraintYAnchor?,
         aspectRatio: CGFloat, // Width to height ratio
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false

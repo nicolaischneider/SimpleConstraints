@@ -7,8 +7,8 @@ public extension UIView {
     /// Case 5: Set height, width, and center x and y constraints.
     func centerWithSize(
         _ subView: UIView,
-        centerX: SimpleConstraints.ConstraintXCenter?,
-        centerY: SimpleConstraints.ConstraintYCenter?,
+        centerX: ConstraintXAnchor?,
+        centerY: ConstraintYAnchor?,
         height: CGFloat,
         width: CGFloat,
         addSubView: Bool = true,

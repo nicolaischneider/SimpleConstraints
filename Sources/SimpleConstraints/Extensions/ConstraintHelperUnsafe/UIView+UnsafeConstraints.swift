@@ -20,7 +20,7 @@ extension UIView {
     
     private func classifyAndSetConstraint(
         subView: UIView,
-        constraint: (SimpleConstraints.ConsraintTypeUnsafe, SimpleConstraints.ConsraintAnchorUnsafe)
+        constraint: (ConsraintTypeUnsafe, ConsraintAnchorUnsafe)
     ) {
         let anchorToSet = constraint.1
         switch constraint.0 {
@@ -53,14 +53,14 @@ extension UIView {
             subView.rightAnchor.constraint(equalTo: anchor, constant: anchorToSet.constant).isActive = true
             
         case .centerX:
-            guard let anchor = anchorToSet.centerX else {
+            guard let anchor = anchorToSet.anchorX else {
                 debugPrint("CenterX Anchor can't set \(anchorToSet.description) for sub view.")
                 return
             }
             subView.centerXAnchor.constraint(equalTo: anchor, constant: anchorToSet.constant).isActive = true
             
         case .centerY:
-            guard let anchor = anchorToSet.centerY else {
+            guard let anchor = anchorToSet.anchorY else {
                 debugPrint("CenterY Anchor can't set \(anchorToSet.description) for sub view.")
                 return
             }

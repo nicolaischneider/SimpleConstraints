@@ -7,8 +7,8 @@ public extension UIView {
     /// Case 6: Set top edge, center x, height, and width constraints.
     func topCenterWithSize(
         _ subView: UIView,
-        top: SimpleConstraints.ConstraintYAnchor?,
-        centerX: SimpleConstraints.ConstraintXCenter?,
+        top: ConstraintYAnchor?,
+        centerX: ConstraintXAnchor?,
         height: CGFloat,
         width: CGFloat,
         addSubView: Bool = true,
@@ -30,8 +30,8 @@ public extension UIView {
     /// Case 6: Set bottom edge, center x, height, and width constraints.
     func bottomCenterWithSize(
         _ subView: UIView,
-        bottom: SimpleConstraints.ConstraintYAnchor?,
-        centerX: SimpleConstraints.ConstraintXCenter?,
+        bottom: ConstraintYAnchor?,
+        centerX: ConstraintXAnchor?,
         height: CGFloat,
         width: CGFloat,
         addSubView: Bool = true,
@@ -53,8 +53,8 @@ public extension UIView {
     /// Case 6: Set left edge, center y, height, and width constraints.
     func leftCenterWithSize(
         _ subView: UIView,
-        left: SimpleConstraints.ConstraintXAnchor?,
-        centerY: SimpleConstraints.ConstraintYCenter?,
+        left: ConstraintXAnchor?,
+        centerY: ConstraintYAnchor?,
         height: CGFloat,
         width: CGFloat,
         addSubView: Bool = true,
@@ -76,8 +76,8 @@ public extension UIView {
     /// Case 6: Set right edge, center y, height, and width constraints.
     func rightCenterWithSize(
         _ subView: UIView,
-        right: SimpleConstraints.ConstraintXAnchor?,
-        centerY: SimpleConstraints.ConstraintYCenter?,
+        right: ConstraintXAnchor?,
+        centerY: ConstraintYAnchor?,
         height: CGFloat,
         width: CGFloat,
         addSubView: Bool = true,

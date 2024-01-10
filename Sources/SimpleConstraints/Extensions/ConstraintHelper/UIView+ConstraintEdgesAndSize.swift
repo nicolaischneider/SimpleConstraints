@@ -7,15 +7,15 @@ public extension UIView {
     /// Case 3: Top and Left, edges
     func edgesAndSize(
         _ subView: UIView,
-        top: SimpleConstraints.ConstraintYAnchor?,
-        left: SimpleConstraints.ConstraintXAnchor?,
+        top: ConstraintYAnchor?,
+        left: ConstraintXAnchor?,
         height: CGFloat,
         width: CGFloat,
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        let top = top ?? SimpleConstraints.ConstraintYAnchor(egde: .top, view: self)
-        let left = left ?? SimpleConstraints.ConstraintXAnchor(egde: .left, view: self)
+        let top = top ?? ConstraintYAnchor(egde: .top, view: self)
+        let left = left ?? ConstraintXAnchor(egde: .left, view: self)
         
         commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
         
@@ -30,15 +30,15 @@ public extension UIView {
     /// Case 3: Top and Right, edges
     func edgesAndSize(
         _ subView: UIView,
-        top: SimpleConstraints.ConstraintYAnchor?,
-        right: SimpleConstraints.ConstraintXAnchor?,
+        top: ConstraintYAnchor?,
+        right: ConstraintXAnchor?,
         height: CGFloat,
         width: CGFloat,
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        let top = top ?? SimpleConstraints.ConstraintYAnchor(egde: .top, view: self)
-        let right = right ?? SimpleConstraints.ConstraintXAnchor(egde: .right, view: self)
+        let top = top ?? ConstraintYAnchor(egde: .top, view: self)
+        let right = right ?? ConstraintXAnchor(egde: .right, view: self)
         
         commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
         
@@ -53,15 +53,15 @@ public extension UIView {
     /// Case 3: Bottom and Left edges
     func edgesAndSize(
         _ subView: UIView,
-        bottom: SimpleConstraints.ConstraintYAnchor?,
-        left: SimpleConstraints.ConstraintXAnchor?,
+        bottom: ConstraintYAnchor?,
+        left: ConstraintXAnchor?,
         height: CGFloat,
         width: CGFloat,
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        let bottom = bottom ?? SimpleConstraints.ConstraintYAnchor(egde: .bottom, view: self)
-        let left = left ?? SimpleConstraints.ConstraintXAnchor(egde: .left, view: self)
+        let bottom = bottom ?? ConstraintYAnchor(egde: .bottom, view: self)
+        let left = left ?? ConstraintXAnchor(egde: .left, view: self)
         
         commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
         
@@ -76,15 +76,15 @@ public extension UIView {
     /// Case 3: Bottom and Right edges
     func edgesAndSize(
         _ subView: UIView,
-        bottom: SimpleConstraints.ConstraintYAnchor?,
-        right: SimpleConstraints.ConstraintXAnchor?,
+        bottom: ConstraintYAnchor?,
+        right: ConstraintXAnchor?,
         height: CGFloat,
         width: CGFloat,
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        let bottom = bottom ?? SimpleConstraints.ConstraintYAnchor(egde: .bottom, view: self)
-        let right = right ?? SimpleConstraints.ConstraintXAnchor(egde: .right, view: self)
+        let bottom = bottom ?? ConstraintYAnchor(egde: .bottom, view: self)
+        let right = right ?? ConstraintXAnchor(egde: .right, view: self)
         
         commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
         
