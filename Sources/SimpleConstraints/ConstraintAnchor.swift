@@ -2,11 +2,11 @@ import Foundation
 import UIKit
 
 enum EdgeY: Hashable {
-    case top, bottom
+    case top, bottom, centerY
 }
 
 enum EdgeX: Hashable {
-    case left, right
+    case left, right, centerX
 }
 
 public enum ConstraintYAnchor {
@@ -22,6 +22,8 @@ public enum ConstraintYAnchor {
             self = .top(view, 0)
         case .bottom:
             self = .bottom(view, 0)
+        case .centerY:
+            self = .centerY(view, 0)
         }
     }
     
@@ -69,6 +71,8 @@ public enum ConstraintXAnchor {
             self = .left(view, 0)
         case .right:
             self = .right(view, 0)
+        case .centerX:
+            self = .centerX(view, 0)
         }
     }
     

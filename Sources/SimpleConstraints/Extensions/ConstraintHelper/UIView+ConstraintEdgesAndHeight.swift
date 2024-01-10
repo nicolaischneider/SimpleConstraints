@@ -98,4 +98,52 @@ public extension UIView {
         ])
     }
     
+    /// Case 3: Left, Right, Center Y and Height
+    func edgesAndCenterYWithHeight(
+        _ subView: UIView,
+        left: ConstraintXAnchor?,
+        right: ConstraintXAnchor?,
+        centerY: ConstraintYAnchor?,
+        height: CGFloat,
+        addSubView: Bool = true,
+        translatesAutoresizingMaskIntoConstraints: Bool = false
+    ) {
+        let left = left ?? ConstraintXAnchor(egde: .left, view: self)
+        let right = right ?? ConstraintXAnchor(egde: .right, view: self)
+        let centerY = centerY ?? ConstraintYAnchor(egde: .centerY, view: self)
+
+        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+
+        NSLayoutConstraint.activate([
+            subView.leftAnchor.constraint(equalTo: left.anchor, constant: left.constant),
+            subView.rightAnchor.constraint(equalTo: right.anchor, constant: right.constant),
+            subView.centerYAnchor.constraint(equalTo: centerY.anchor, constant: centerY.constant),
+            subView.heightAnchor.constraint(equalToConstant: height)
+        ])
+    }
+
+    /// Case 3: Top, Bottom, Center X and Width
+    func edgesAndCenterXWithWidth(
+        _ subView: UIView,
+        top: ConstraintYAnchor?,
+        bottom: ConstraintYAnchor?,
+        centerX: ConstraintXAnchor?,
+        width: CGFloat,
+        addSubView: Bool = true,
+        translatesAutoresizingMaskIntoConstraints: Bool = false
+    ) {
+        let top = top ?? ConstraintYAnchor(egde: .top, view: self)
+        let bottom = bottom ?? ConstraintYAnchor(egde: .bottom, view: self)
+        let centerX = centerX ?? ConstraintXAnchor(egde: .centerX, view: self)
+
+        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+
+        NSLayoutConstraint.activate([
+            subView.topAnchor.constraint(equalTo: top.anchor, constant: top.constant),
+            subView.bottomAnchor.constraint(equalTo: bottom.anchor, constant: bottom.constant),
+            subView.centerXAnchor.constraint(equalTo: centerX.anchor, constant: centerX.constant),
+            subView.widthAnchor.constraint(equalToConstant: width)
+        ])
+    }
+    
 }
