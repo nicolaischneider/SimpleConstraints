@@ -35,7 +35,11 @@ view.edgesAndRatio(image, top: nil, left: nil, right: nil, aspectRatio: 1)
 
 ## Installation
 
-SimpleConstraints can currently only be added as a Swift Package.
+SimpleConstraints is available through the Swift Package Manager. To install, select **File** > **Swift Packages** > **Add Package Dependency**
+... and add the SimpleConstraints repository URL:
+```
+https://github.com/nicolaischneider/SimpleConstraints.git
+```
 
 ## Usage: Safe Constraints
 
