@@ -9,7 +9,7 @@ public extension UIView {
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         for constraint in constraints {
             classifyAndSetConstraint(subView: subView, constraint: (constraint.type, constraint.constraint))
         }

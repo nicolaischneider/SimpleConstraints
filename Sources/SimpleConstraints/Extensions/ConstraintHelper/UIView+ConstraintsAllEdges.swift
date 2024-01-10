@@ -13,7 +13,7 @@ public extension UIView {
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         
         let top = top ?? ConstraintYAnchor(egde: .top, view: self)
         let bottom = bottom ?? ConstraintYAnchor(egde: .bottom, view: self)

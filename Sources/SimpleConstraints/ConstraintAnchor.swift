@@ -1,11 +1,11 @@
 import Foundation
 import UIKit
 
-enum EdgeY: Hashable {
+public enum EdgeY: Hashable {
     case top, bottom, centerY
 }
 
-enum EdgeX: Hashable {
+public enum EdgeX: Hashable {
     case left, right, centerX
 }
 

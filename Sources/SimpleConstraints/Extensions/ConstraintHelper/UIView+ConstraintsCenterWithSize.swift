@@ -14,7 +14,7 @@ public extension UIView {
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         NSLayoutConstraint.activate([
             subView.centerXAnchor.constraint(
                 equalTo: centerX?.anchor ?? self.centerXAnchor,

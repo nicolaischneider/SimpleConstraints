@@ -17,7 +17,7 @@ public extension UIView {
         let top = top ?? ConstraintYAnchor(egde: .top, view: self)
         let left = left ?? ConstraintXAnchor(egde: .left, view: self)
         
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         
         NSLayoutConstraint.activate([
             subView.topAnchor.constraint(equalTo: top.anchor, constant: top.constant),
@@ -40,7 +40,7 @@ public extension UIView {
         let top = top ?? ConstraintYAnchor(egde: .top, view: self)
         let right = right ?? ConstraintXAnchor(egde: .right, view: self)
         
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         
         NSLayoutConstraint.activate([
             subView.topAnchor.constraint(equalTo: top.anchor, constant: top.constant),
@@ -63,7 +63,7 @@ public extension UIView {
         let bottom = bottom ?? ConstraintYAnchor(egde: .bottom, view: self)
         let left = left ?? ConstraintXAnchor(egde: .left, view: self)
         
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         
         NSLayoutConstraint.activate([
             subView.bottomAnchor.constraint(equalTo: bottom.anchor, constant: bottom.constant),
@@ -86,7 +86,7 @@ public extension UIView {
         let bottom = bottom ?? ConstraintYAnchor(egde: .bottom, view: self)
         let right = right ?? ConstraintXAnchor(egde: .right, view: self)
         
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         
         NSLayoutConstraint.activate([
             subView.bottomAnchor.constraint(equalTo: bottom.anchor, constant: bottom.constant),

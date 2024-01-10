@@ -14,7 +14,7 @@ public extension UIView {
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         NSLayoutConstraint.activate([
             subView.topAnchor.constraint(
                 equalTo: top?.anchor ?? self.topAnchor,
@@ -41,7 +41,7 @@ public extension UIView {
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         NSLayoutConstraint.activate([
             subView.bottomAnchor.constraint(
                 equalTo: bottom?.anchor ?? self.bottomAnchor,
@@ -68,7 +68,7 @@ public extension UIView {
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         NSLayoutConstraint.activate([
             subView.topAnchor.constraint(
                 equalTo: top?.anchor ?? self.topAnchor,
@@ -95,7 +95,7 @@ public extension UIView {
         addSubView: Bool = true,
         translatesAutoresizingMaskIntoConstraints: Bool = false
     ) {
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         NSLayoutConstraint.activate([
             subView.topAnchor.constraint(
                 equalTo: top?.anchor ?? self.topAnchor,

@@ -18,7 +18,7 @@ public extension UIView {
         let left = left ?? ConstraintXAnchor(egde: .left, view: self)
         let right = right ?? ConstraintXAnchor(egde: .right, view: self)
         
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         
         subView.topAnchor.constraint(equalTo: top.anchor, constant: top.constant).isActive = true
         subView.leftAnchor.constraint(equalTo: left.anchor, constant: left.constant).isActive = true
@@ -40,7 +40,7 @@ public extension UIView {
         let left = left ?? ConstraintXAnchor(egde: .left, view: self)
         let right = right ?? ConstraintXAnchor(egde: .right, view: self)
         
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         
         NSLayoutConstraint.activate([
             subView.bottomAnchor.constraint(equalTo: bottom.anchor, constant: bottom.constant),
@@ -64,7 +64,7 @@ public extension UIView {
         let bottom = bottom ?? ConstraintYAnchor(egde: .bottom, view: self)
         let left = left ?? ConstraintXAnchor(egde: .left, view: self)
         
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         
         NSLayoutConstraint.activate([
             subView.topAnchor.constraint(equalTo: top.anchor, constant: top.constant),
@@ -88,7 +88,7 @@ public extension UIView {
         let bottom = bottom ?? ConstraintYAnchor(egde: .bottom, view: self)
         let right = right ?? ConstraintXAnchor(egde: .right, view: self)
         
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
         
         NSLayoutConstraint.activate([
             subView.topAnchor.constraint(equalTo: top.anchor, constant: top.constant),
@@ -112,7 +112,7 @@ public extension UIView {
         let right = right ?? ConstraintXAnchor(egde: .right, view: self)
         let centerY = centerY ?? ConstraintYAnchor(egde: .centerY, view: self)
 
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
 
         NSLayoutConstraint.activate([
             subView.leftAnchor.constraint(equalTo: left.anchor, constant: left.constant),
@@ -136,7 +136,7 @@ public extension UIView {
         let bottom = bottom ?? ConstraintYAnchor(egde: .bottom, view: self)
         let centerX = centerX ?? ConstraintXAnchor(egde: .centerX, view: self)
 
-        commonSetup(subView, sub: addSubView, translate: translatesAutoresizingMaskIntoConstraints)
+        commonSetup(subView, addSubview: addSubView, tAMIC: translatesAutoresizingMaskIntoConstraints)
 
         NSLayoutConstraint.activate([
             subView.topAnchor.constraint(equalTo: top.anchor, constant: top.constant),
