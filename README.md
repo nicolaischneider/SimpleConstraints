@@ -77,6 +77,10 @@ view.edges(subView, top: .topSafe(view, 20), bottom: .bottom(view, 10), left: ni
 ```swift
 view.edgesAndHeight(subView, top: nil, left: nil, right: nil, height: 20)
 ```
+Alternative functions for this case:
+* `edgesAndWidth()`
+* `edgesAndCenterYWithHeight()`
+* `edgesAndCenterXWithWidth()`
 
 ### Case 3: 2 Edges, Height and Width
 
@@ -109,6 +113,11 @@ view.centerWithSize(subView,
 ```swift
 view.topCenterWithSize(subView, top: nil, centerX: .centerX(view, 0), height: 30, width: 30)
 ```
+Existing functions for this case:
+* `topCenterWithSize()`
+* `bottomCenterWithSize()`
+* `leftCenterWithSize()`
+* `rightCenterWithSize()`
 
 ## Usage: Unsafe Constraints
 
@@ -117,17 +126,28 @@ Alternatively, **SimpleConstraints** also supports the usage of unsafe setting o
 ### `Straint`
 
 A `Straint` consists of 
-- a **type** meant for the constraint of the subview that should be set and
-- a **constraint**, which describes the exact constraint we want to set to
+- a **straint** meant for the constraint of the subview that should be set and
+- a **anchor**, which describes the exact anchor we want to set to
 
 ### Example for Unsafe Constraints
 
 ```swift
 view.unsafeConstraints(subview, constraints: [
-    Straint(t: .top, c: .bottom(otherView, 40)),
-    Straint(t: .left, c: .left(view, 20)),
-    Straint(t: .right, c: .right(view, -20)),
-    Straint(t: .height, c: .length(30))
+    Straint(straint: .top, anchor: .bottom(otherView, 40)),
+    Straint(straint: .left, anchor: .left(view, 20)),
+    Straint(straint: .right, anchor: .right(view, -20)),
+    Straint(straint: .height, anchor: .length(30))
+])
+```
+"Translated" to a regular auto-layout implementation this is what the code would look like:
+```swift
+view.addSubview(subview)
+subView.translatesAutoresizingMaskIntoConstraints = false
+NSLayoutConstraint.activate([
+    subView.topAnchor.constraint(equalTo: otherView.bottomAnchor, constant: 40),
+    subView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+    subView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+    subView.heightAnchor.constraint(equalToConstant: 30)
 ])
 ```
 

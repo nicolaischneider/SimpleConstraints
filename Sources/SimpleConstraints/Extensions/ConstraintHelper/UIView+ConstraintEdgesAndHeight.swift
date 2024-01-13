@@ -98,7 +98,7 @@ public extension UIView {
         ])
     }
     
-    /// Case 3: Left, Right, Center Y and Height
+    /// Case 2: Left, Right, Center Y and Height
     func edgesAndCenterYWithHeight(
         _ subView: UIView,
         left: ConstraintXAnchor?,
@@ -122,7 +122,7 @@ public extension UIView {
         ])
     }
 
-    /// Case 3: Top, Bottom, Center X and Width
+    /// Case 2: Top, Bottom, Center X and Width
     func edgesAndCenterXWithWidth(
         _ subView: UIView,
         top: ConstraintYAnchor?,
