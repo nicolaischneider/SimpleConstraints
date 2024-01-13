@@ -9,6 +9,19 @@ public enum EdgeX: Hashable {
     case left, right, centerX
 }
 
+public enum Length {
+    case height, width
+    
+    func anchor (view: UIView) -> NSLayoutDimension {
+        switch self {
+        case .height:
+            return view.heightAnchor
+        case .width:
+            return view.widthAnchor
+        }
+    }
+}
+
 public enum ConstraintYAnchor {
     case top(UIView, CGFloat)
     case topSafe(UIView, CGFloat)

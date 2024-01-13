@@ -37,6 +37,18 @@ extension UIView {
     public func disableConstraint(for anchor: EdgeY) {
         self.toggleConstraint(for: ConstraintYAnchor(egde: anchor, view: self).anchor, enable: false)
     }
+
+    /// Enable the constraints of the given anchor
+    /// - Parameter anchor: height or width anchor
+    public func enableConstraint(for anchor: Length) {
+        self.toggleConstraint(for: anchor.anchor(view: self), enable: true)
+    }
+    
+    /// Disable the constraints of the given anchor
+    /// - Parameter anchor: height or width anchor
+    public func disableConstraint(for anchor: Length) {
+        self.toggleConstraint(for: anchor.anchor(view: self), enable: false)
+    }
     
     /// Removes all constraints affecting this view.
     public func removeAllConstraints() {
@@ -69,6 +81,18 @@ extension UIView {
     }
     
     private func toggleConstraint(for anchor: NSLayoutAnchor<NSLayoutYAxisAnchor>, enable: Bool) {
+        // Find and deactivate the constraint for the specified anchor
+        constraints.first {
+            $0.firstAnchor == anchor || $0.secondAnchor == anchor
+        }?.isActive = enable
+
+        // Also check the superview's constraints
+        superview?.constraints.first {
+            $0.firstAnchor == anchor || $0.secondAnchor == anchor
+        }?.isActive = enable
+    }
+    
+    private func toggleConstraint(for anchor: NSLayoutDimension, enable: Bool) {
         // Find and deactivate the constraint for the specified anchor
         constraints.first {
             $0.firstAnchor == anchor || $0.secondAnchor == anchor
