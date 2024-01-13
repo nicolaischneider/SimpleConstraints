@@ -151,6 +151,17 @@ NSLayoutConstraint.activate([
 ])
 ```
 
+## Usage Helper Functions
+
+### Enable/Disable Constraints
+You can enbale/disable constraints of a given anchor using `enableConstraint` / `disableConstraint`. The resepctive anchor is passed as a parameter.
+```swift
+view.disableConstraint(for: .top)
+```
+
+### Remove all Constraints
+Remove all constraints using `removeAllConstraints()`.
+
 ## Contributing
 
 If you find any issues or have suggestions, please create an issue.
