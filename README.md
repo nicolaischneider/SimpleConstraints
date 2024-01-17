@@ -2,10 +2,10 @@
     <img src="simple_constraints.png" width="1000" alt="SimpleConstraints"/>
 </p>
 
-![Release](https://img.shields.io/github/v/release/nicolaischneider/SimpleConstraints)
 ![Swift 5.9](https://img.shields.io/badge/Swift-5.9-orange)
 ![iOS v12+](https://img.shields.io/badge/iOS-v12+-blue)
 ![tvOS v12+](https://img.shields.io/badge/tvOS-v12+-blue)
+![Release](https://img.shields.io/github/v/release/nicolaischneider/SimpleConstraints)
 ![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen)
 
 # SimpleConstraints
