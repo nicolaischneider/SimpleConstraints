@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-    s.name             = 'SimpleConstraints'
+    s.name             = 'SimpleConstraintsKit'
     s.version          = '0.2.2'
     s.summary          = 'A simple library for easy auto layout constraints in iOS and tvOS'
     s.description      = <<-DESC

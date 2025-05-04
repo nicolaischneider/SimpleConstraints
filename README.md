@@ -36,6 +36,7 @@ image.heightAnchor.constraint(equalTo: image.widthAnchor, multiplier: 1/1)
 ```
 Constraints using **SimpleConstraints**
 ```swift
+import SimpleConstraints
 view.edgesAndRatio(image, top: nil, left: nil, right: nil, aspectRatio: 1)
 ```
 
@@ -53,7 +54,7 @@ https://github.com/nicolaischneider/SimpleConstraints.git
 
 Add the following line to your `Podfile`:
 ```ruby
-pod 'SimpleConstraints'
+pod 'SimpleConstraintsKit'
 ```
 
 Then run `pod install` and open your `.xcworkspace`.
