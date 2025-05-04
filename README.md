@@ -41,11 +41,22 @@ view.edgesAndRatio(image, top: nil, left: nil, right: nil, aspectRatio: 1)
 
 ## Installation
 
+### Swift Package Manager
+
 SimpleConstraints is available through the Swift Package Manager. To install, select **File** > **Swift Packages** > **Add Package Dependency**
 ... and add the SimpleConstraints repository URL:
 ```
 https://github.com/nicolaischneider/SimpleConstraints.git
 ```
+
+### CocoaPods
+
+Add the following line to your `Podfile`:
+```ruby
+pod 'SimpleConstraints'
+```
+
+Then run `pod install` and open your `.xcworkspace`.
 
 ## Usage: Safe Constraints
 
